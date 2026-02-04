@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+    <title>Work Order Organizer</title>
+</head>
+<body>
+    <main>
+        <div class="left-container">
+            <h1>Welcome, <span id="usernameDisplay"></span><br><span>Today's Work</span></h1>
+            <button id="logoutBtn">Logout</button>
+        </div>
+        <div class="right-container">
+            <h2>Work Orders</h2>
+            <form id="workOrderForm">
+                <input id="title" placeholder="Work order title" required />
+                <input id="assignedTo" placeholder="Assigned to" />
+                    <input id="location" placeholder="Job location (address or coordinates)">
+                <select id="priority">
+                    <option>Low</option>
+                    <option selected>Normal</option>
+                    <option>High</option>
+                </select>
+                <button id="listBtn">Add</button>
+            </form>
+
+            <select id="techFilter">
+                <option value="all">All Technicians</option>
+            </select>
+
+            <div id="workOrderList"></div>
+
+        </div>
+    </main>
+    <!--WORK ORDER MODAL-->
+    <div id="modalContainer" class="hidden">
+        <div class="content">
+            <div class="modal-left">
+                <h2 id="modalTitle"></h2>
+                <p><strong>Assigned To:</strong><span id="modalTech"></span></p>
+                <p><strong>Priority:</strong><span id="modalPriority"></span></p>
+                <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+                <select id="modalStatusSelect">
+                    <option value="Open">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>        
+                <p><strong>Location:</strong><span id="modalLocation"></span></p>
+                <textarea id="modalNotes" placeholder="Add notes..."></textarea>
+
+                <button id="saveNotesBtn">Save Notes</button>
+            </div>
+            <div class="modal-right">
+                <div id="notesContainer" class="notes-list"></div>
+            </div>
+            <span class="close">&times;</span>
+        </div>
+    </div>
+</body>
+</html>
