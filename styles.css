@@ -176,4 +176,32 @@ input, select {
 
 #saveNotesBtn {
     display: block;
+
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .left-container {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .right-container {
+        width: 100%;
+    }
+
+    .content {
+        width: 95%;
+        margin-top: 30%;
+        flex-direction: column;
+    }
+
+    .modal-right {
+        width: 100%;
+    }
+
 }
